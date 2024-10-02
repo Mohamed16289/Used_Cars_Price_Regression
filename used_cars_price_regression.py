@@ -9,8 +9,7 @@ Original file is located at
 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+#import seaborn as sns
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
