@@ -3,8 +3,6 @@ streamlit
 numpy
 pandas
 matplot
-fastapi
-unicorn
 warnings
 xgboost
 seaborn
