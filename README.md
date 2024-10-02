@@ -1,1 +1,2 @@
-# Used_Cars_Price_Regression
+This model used to detect the price of used cars
+
