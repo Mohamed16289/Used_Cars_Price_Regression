@@ -6,6 +6,6 @@ matplot
 fastapi
 unicorn
 warnings
-XGBoost
+xgboost
 seaborn
 
