@@ -7,7 +7,6 @@ from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 import xgboost as xgb
-import lightgbm as lgb
 import warnings
 import pickle as pkl
 warnings.filterwarnings('ignore')
