@@ -6,4 +6,6 @@ matplot
 warnings
 xgboost
 seaborn
+streamlit
+pickle
 
