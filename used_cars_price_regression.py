@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 import xgboost as xgb
 import lightgbm as lgb
 import warnings
+import pickle as pkl
 warnings.filterwarnings('ignore')
 
 df_train = pd.read_csv('/content/train.csv')
@@ -423,3 +424,5 @@ print(f"R-squared: {r2:.6f}")
 print(f"Mean Squared Error (MSE): {mse:.6f}")
 print(f"Root Mean Squared Error (RMSE): {rmse:.6f}")
 print(f"Mean Absolute Error (MAE): {mae:.6f}")
+filename= "Used Cars Price.sav "
+pkl.dump(model1,open(filename,'wb'))
