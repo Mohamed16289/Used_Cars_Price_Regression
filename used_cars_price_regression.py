@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import seaborn as sns
+# import seaborn as sns
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
@@ -244,15 +244,15 @@ df_train.head(3)
 
 df_train['ext_col'].nunique()
 
-ext_col_price = df_train.groupby('ext_col')['price'].mean().sort_values(ascending=False)
+# ext_col_price = df_train.groupby('ext_col')['price'].mean().sort_values(ascending=False)
 
-plt.figure(figsize=(100,50))
-sns.barplot(x=ext_col_price.index, y=ext_col_price.values)
-plt.xlabel('ext_col')
-plt.ylabel('Average Price')
-plt.title('Average Price by ext_col')
-plt.xticks(rotation=90)
-plt.show()
+# plt.figure(figsize=(100,50))
+# sns.barplot(x=ext_col_price.index, y=ext_col_price.values)
+# plt.xlabel('ext_col')
+# plt.ylabel('Average Price')
+# plt.title('Average Price by ext_col')
+# plt.xticks(rotation=90)
+# plt.show()
 
 # Calculate mean price per color and sort
 ext_col_price = df_train.groupby('ext_col')['price'].mean().sort_values(ascending=False)
@@ -271,15 +271,15 @@ print(df_train['ext_col_encoded'].isna().sum())
 print(df_test['ext_col_encoded'].isna().sum())
 
 ## we will make the same steps on int_col as we did on ext_col :
-int_col_price = df_train.groupby('int_col')['price'].mean().sort_values(ascending=False)
+# int_col_price = df_train.groupby('int_col')['price'].mean().sort_values(ascending=False)
 
-plt.figure(figsize=(100,50))
-sns.barplot(x=int_col_price.index, y=int_col_price.values)
-plt.xlabel('int_col')
-plt.ylabel('Average Price')
-plt.title('Average Price by int_col')
-plt.xticks(rotation=90)
-plt.show()
+# plt.figure(figsize=(100,50))
+# sns.barplot(x=int_col_price.index, y=int_col_price.values)
+# plt.xlabel('int_col')
+# plt.ylabel('Average Price')
+# plt.title('Average Price by int_col')
+# plt.xticks(rotation=90)
+# plt.show()
 
 # Arrange the colors from highest to lowest based on price , then encode it
 int_col_price = df_train.groupby('int_col')['price'].mean().sort_values(ascending=False)
@@ -354,14 +354,14 @@ corr_matrix = df_train[num_cols].corr()
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-plt.subplots(figsize=(20, 15))
-sns.heatmap(corr_matrix,
-            xticklabels=corr_matrix.columns.values,
-            yticklabels=corr_matrix.columns.values,
-            linewidth=0.1,
-            annot=True,  # This will show the correlation values on the graph
-            fmt=".3f")
-plt.show()
+# plt.subplots(figsize=(20, 15))
+# sns.heatmap(corr_matrix,
+#             xticklabels=corr_matrix.columns.values,
+#             yticklabels=corr_matrix.columns.values,
+#             linewidth=0.1,
+#             annot=True,  # This will show the correlation values on the graph
+#             fmt=".3f")
+# plt.show()
 
 # we droped (Displacement) as it was high_corr with (Cylinder Count)
 df_train.drop('Displacement', axis=1, inplace=True)
@@ -409,19 +409,19 @@ df_submission.to_csv('submission2.csv', index=False)
 
 """**XGBRegressor**"""
 
-model2 = xgb.XGBRegressor()
+# model2 = xgb.XGBRegressor()
 
-model2.fit(X_train, y_train)
-y_pred = model2.predict(X_test)
+# model2.fit(X_train, y_train)
+# y_pred = model2.predict(X_test)
 
-mse = mean_squared_error(y_test, y_pred)
-rmse = mse ** 0.5
-mae = mean_absolute_error(y_test, y_pred)
-r2 = r2_score(y_test, y_pred)
+# mse = mean_squared_error(y_test, y_pred)
+# rmse = mse ** 0.5
+# mae = mean_absolute_error(y_test, y_pred)
+# r2 = r2_score(y_test, y_pred)
 
-print(f"R-squared: {r2:.6f}")
-print(f"Mean Squared Error (MSE): {mse:.6f}")
-print(f"Root Mean Squared Error (RMSE): {rmse:.6f}")
-print(f"Mean Absolute Error (MAE): {mae:.6f}")
-filename= "Used Cars Price.sav "
-pkl.dump(model1,open(filename,'wb'))
+# print(f"R-squared: {r2:.6f}")
+# print(f"Mean Squared Error (MSE): {mse:.6f}")
+# print(f"Root Mean Squared Error (RMSE): {rmse:.6f}")
+# print(f"Mean Absolute Error (MAE): {mae:.6f}")
+# filename= "Used Cars Price.sav "
+# pkl.dump(model1,open(filename,'wb'))
